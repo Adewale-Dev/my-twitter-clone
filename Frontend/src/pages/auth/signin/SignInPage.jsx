@@ -19,7 +19,7 @@ const LoginPage = () => {
 	const { mutate:Login, isPending, isError, error } = useMutation({
 		mutationFn: async ({ username, password }) => {
 			try {
-				const res = await fetch("/auth/login", {
+				const res = await fetch("https://my-twitter-clone-backend.vercel.app/?vercelToolbarCode=Jei6Lj18LmMA1S0/api/auth/login", {
 					method: "POST",
 					headers: {
 					"Content-Type": "application/json",

@@ -7,6 +7,7 @@ import authRoutes from './routes/authRoute.js';
 import userRoutes from './routes/userRoute.js';
 import postRoutes from './routes/postRoute.js';
 import notificationRoutes from './routes/notificationRoutes.js';
+import cors from 'cors';
 
 import connectMongoDB from './db/connectMongoDB.js';
 
@@ -18,6 +19,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -28,6 +30,7 @@ app.get('/', (req,res) => {
 })
 
 app.use(cookieParser());
+app.use(cors());
 
 
 app.use('/api/auth',authRoutes);
